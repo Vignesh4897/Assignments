@@ -10,8 +10,8 @@ debtToIncomeRatio = 35.0;
 let customerName : string = "Mr Vignesh";
 let creditScore : number = 660;
 let income : number = 55000.0;
-//let isEmployed : boolean = true;
-let unEmployed : boolean = false;
+let isEmployed : boolean = true;
+//let unEmployed : boolean = false;
 let debtToIncomeRatio : number = 39.0;
 
 if(creditScore >= 750)
@@ -20,7 +20,7 @@ if(creditScore >= 750)
 }
 else if(creditScore >= 650 && creditScore <=750)
 {
-    if(income >= 50000 && unEmployed)
+    if(income >= 50000 && isEmployed)
     {
      if (debtToIncomeRatio < 40)
      {
