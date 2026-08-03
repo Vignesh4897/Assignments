@@ -1,0 +1,16 @@
+{
+  "name": "javascript-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data_types.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
