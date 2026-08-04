@@ -79,10 +79,3 @@ console.log("Ternary Operators ");
 let age=17;
 let result=(age>=18)? "Eligible for Vote" : "Not Eligible for Vote";
 console.log(result);
-
-
-
-
-
-
-
