@@ -6,14 +6,20 @@ income = 55000.0;
 isEmployed = true;
 debtToIncomeRatio = 35.0;
 */
-
-let customerName : string = "Mr Vignesh";
+function evaluateLoan(
+    customerName : string,
+    creditScore : number,
+    income : number,
+    isEmployed : boolean,
+    debtToIncomeRatio : number
+):void{
+/*let customerName : string = "Mr Vignesh";
 let creditScore : number = 660;
 let income : number = 55000.0;
 let isEmployed : boolean = true;
 //let unEmployed : boolean = false;
 let debtToIncomeRatio : number = 39.0;
-
+*/
 if(creditScore >= 750)
 {
     console.log(`Congrats ${customerName} your loan is approved and your cibil score ${creditScore}/900`);
@@ -40,3 +46,12 @@ else
 {
  console.log(`Sorry ${customerName} your cibil score is less than 650 so you are not not eligible for loan`);
 }
+}
+
+evaluateLoan(
+    "Mr Vignesh",
+    660,
+    55000.0,
+    true,
+    39.0
+);
