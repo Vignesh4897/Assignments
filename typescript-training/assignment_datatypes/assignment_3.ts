@@ -19,9 +19,9 @@ let total : number=0;
 console.log("Updated Marks:");
 for(let i:number=0;i<=2;i++)
 {
-studentMarks[i] += 10;
+studentMarks[i]! += 10;
 console.log(`${studentName[i]}:${studentMarks[i]}`);
-total += studentMarks[i];
+total += studentMarks[i]!;
 }
 //let averagemarks :number = total/3;
 let averagemarks :number = total/studentMarks.length;

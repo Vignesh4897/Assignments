@@ -37,12 +37,12 @@ let hike_Percentage : number;
 console.log("**********************************************");
 for(let i:number=0;i<employeeName.length;i++)
 {
-    if(employeeRating[i] >= 4.0)
+    if(employeeRating[i]! >= 4.0)
     {
      variablePay = 15.0;
      bonus = 1500;
     }
-    else if(employeeRating[i] >=3 && employeeRating[i] < 4)
+    else if(employeeRating[i]! >=3 && employeeRating[i]! < 4)
     {
      variablePay = 10.0;
      bonus = 1200;
@@ -52,7 +52,7 @@ for(let i:number=0;i<employeeName.length;i++)
       variablePay = 3.0;
       bonus = 300;  
     }
-    if(employeeExperience[i]>=5)
+    if(employeeExperience[i]!>=5)
     {
         reward = 5000;
     }
@@ -60,8 +60,8 @@ for(let i:number=0;i<employeeName.length;i++)
     {
         reward=0;
     }
-hike = (employeeSalary[i] * variablePay) + bonus + reward ;
-hike_Percentage =(hike/employeeSalary[i]);
+hike = (employeeSalary[i]! * variablePay) + bonus + reward ;
+hike_Percentage =(hike/employeeSalary[i]!);
 console.log(`Employee Name             : ${employeeName[i]}`);
 console.log(`Employee Salary           : ${employeeSalary[i]}`);
 console.log(`Employee Experience       : ${employeeExperience[i]} Years`);

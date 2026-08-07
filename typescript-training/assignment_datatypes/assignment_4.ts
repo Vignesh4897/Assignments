@@ -21,7 +21,7 @@ Transaction with Amount” and also print total number of suspicious transaction
 let amount : number[] = [50000,-2000,3000,-15000,-200,-300,4000,-3000];
 for(let i:number=0;i<amount.length;i++)
 {
-    if(amount[i]>0 )
+    if(amount[i]!>0 )
     {
       console.log(`${[i+1]}.Credit amount ${amount[i]}`);
     }
@@ -35,13 +35,13 @@ let totalAmount_Credited : number =0;
 let totalAmount_Debited : number =0;
 for (let j:number=0;j<amount.length;j++)
 {
-    if(amount[j]>0)
+    if(amount[j]!>0)
     {
-     totalAmount_Credited += amount[j];
+     totalAmount_Credited += amount[j]!;
     }
     else
     {
-     totalAmount_Debited += amount[j];
+     totalAmount_Debited += amount[j]!;
     }
 }
 console.log(`1.Total amount credited in account is ${totalAmount_Credited}`);
@@ -51,7 +51,7 @@ console.log("\n***Calculate the total remaining Amount***");
 let totalBanlacemount=0;
 for (let p:number=0;p<amount.length;p++)
 {
-  totalBanlacemount += amount[p];
+  totalBanlacemount += amount[p]!;
 }
 console.log(`The total remaining amount is ${totalBanlacemount}`);
 
