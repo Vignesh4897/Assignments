@@ -53,3 +53,15 @@ for(let [rollNum,nameList] of students)
     // or console.log("RollNo  :",rollNum,"NameList:",nameList);
 }
 //console.log("*********************");clear
+/*
+Q: Why does for...of return [key, value] for a Map?
+
+Answer:
+A Map stores its data as key-value pairs. Each item in the Map is an entry containing both a key and its corresponding value. Therefore, during each iteration, for...of returns one entry in the form [key, value]. We can then destructure that array into separate key and value variables.
+
+What you should remember
+Array → Values (10, 20, 30)
+String → Characters ('H', 'e', 'l', 'l', 'o')
+Set → Unique values (10, 20, 30)
+Map → Key-value pairs ([101, "Vignesh"], [102, "Rahul"])
+*/
