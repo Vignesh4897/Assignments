@@ -150,7 +150,7 @@ function loginIntoApplication(browserName: string, url: string): void {
     console.log(`Enter the URL: "${url}"`);
     console.log("Enter the username as 'Bharath' and password as 'Bharath@123'");
     console.log("Click on the login button");
-}
+} 
 
 function logoutFromApplication(): void {
     console.log("Logout from the application");

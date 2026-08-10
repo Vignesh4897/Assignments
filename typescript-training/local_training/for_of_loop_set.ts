@@ -53,3 +53,11 @@ for (let fruit of fruits)
     console.log(fruit);
 }
 console.log("****************************************\n");
+
+/*
+Collection	for...in	     for...of
+Array	    ✅ Indexes	    ✅ Values
+Object	    ✅ Keys	        ❌ Not directly iterable
+Set	        ❌ Not supported	✅ Values
+Map	        ❌ Not supported	✅ Key-value pairs
+*/
