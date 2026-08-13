@@ -15,7 +15,7 @@ Input: n = 1
 Output: false
 Explanation: 1 has only one divisor (1 itself), which is not sufficient for it to be considered
 prime.*/
-
+//method 1
 let n1 :number = 7;
 let isprime :boolean=true;
 for(let i:number=2;i<n1;i++)
