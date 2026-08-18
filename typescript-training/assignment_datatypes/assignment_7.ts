@@ -5,17 +5,21 @@
 
 String sentence = "Java programming is fun and challenging";
 */
-let sentence : string = "Java programming is fun and challenging";
+let sentence: string ="Java programming is fun and challenging";
+let words : string[] = sentence.split(" ");
 
-let words:string[] = sentence.split(" ");
-console.log(`the total number of words in the sentence is ${words.length}`);
-words.reverse();
-console.log(words.join(" "));
-words.reverse();
-console.log(words.join(" "));
+console.log(`total number of words in the sentence ${words.length}`);
 
-for (let i = 0; i < words.length; i++) {
-    words[i] = words[i]![0]!.toUpperCase() + words[i]!.slice(1);
+let reverseString : string = "";
+for(let i:number=words.length-1;i>=0;i--)
+{  
+ reverseString = reverseString + (`${words[i]} `);
 }
-
-console.log(`Upper Case string is '${words.join(" ")}'`);
+console.log(reverseString);
+//console.log(words);
+let originalSentence : string = "";
+for(let i:number=0;i<words.length;i++)
+{
+   originalSentence = originalSentence + words[i]!.charAt(0).toUpperCase() + words[i]!.slice(1)+" ";
+}
+console.log(originalSentence);

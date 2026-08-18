@@ -78,7 +78,7 @@ fruits     → original array
 newFruits  → extracted array==> if we ( use const) let newfruits = fruits.slice or only if we (let) fruits = fruits.slice(1,4)
 */
 console.log("8. Create a new array by extracting part of the values from the existing array. ");
-let newfruits=fruits.slice(1,4);
+let newfruits=fruits.slice(1,3);
 console.log(newfruits);
 console.log("***********************************************************************\n");
 

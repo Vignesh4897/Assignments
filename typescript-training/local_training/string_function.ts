@@ -1,5 +1,5 @@
 //Strings : String is a collection of characters. 
-
+console.log("*****************************Start_of_the_program***************************************");
 let firstName: string = "Sashvik";
 let lastName: string = 'Vignesh';
 let role: string = "'Senior' SDET";console
@@ -25,9 +25,10 @@ console.log("*******************************************************************
 console.log("3. Method to get a specific character by using an index");
 let charAtIndex : string = originalString.charAt(11); //#######charAt is Syntax####
 console.log(`the character of an index is: ${charAtIndex}`);
-//console.log("************************************************************************************\n");
+console.log("************************************************************************************\n");
 
-//reverse the original string
+//4.reverse the original string
+console.log("4.reverse the original string")
 let reverseString : string = "";
 for(let i=originalString.length;i>=0;i--)
 {
@@ -103,8 +104,8 @@ console.log("13. Method to compare two different string values");
 //=== (Strict Equality) It will compare both value and type of the string. 
 let string1: string = "10";
 let string2: string | number = 10;
-console.log(`Loose Equality (==) : ${string1 == (string2 as any)}`); //here (Sxxx as any) avoid warning
-console.log(`Strict Equality (===) : ${string1 === (string2 as any)}`); //here (Sxxx as any) avoid warning
+console.log(`Loose Equality (==) : ${string1 == (string2 as any)}`); //here (string [as any]) avoid warning
+console.log(`Strict Equality (===) : ${string1 === (string2 as any)}`); //here (string [as any]) avoid warning
 
 //includes() => It will check whether the string contains a special character or not. 
 //startsWith() => It will check whether the string starts with a specific substring or not.

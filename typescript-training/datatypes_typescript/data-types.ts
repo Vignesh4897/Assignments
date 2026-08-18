@@ -60,7 +60,7 @@ console.log(salary);
 let empAddress: string | number | boolean = "Bangalore";
 console.log(empAddress);
 
-empAddress =560114;
+empAddress =560114; 
 console.log(empAddress);
 
 empAddress = 10<20;
@@ -125,9 +125,9 @@ let fruits:string[] = ["Apple", "Banana", "Mango", "Grapes"];
 let prices:number[] = [200, 80, 100, 120];
 let fruitsAndPrices:(string | number)[] = ["Apple", 200, "Banana", 80, "Mango", 100, "Grapes", 120];
 
-console.log(fruits[0],"-->",prices[0]);
-console.log(fruits[1],"-->",prices[1]);
-console.log(fruits[2],"-->",prices[2]);
+console.log(fruits[0],"=",prices[0]);
+console.log(fruits[1],"=",prices[1]);
+console.log(fruits[2],"=",prices[2]);
 
 // tuples in TypeScript : Tuple is an ordered array in TypeScript.
 
