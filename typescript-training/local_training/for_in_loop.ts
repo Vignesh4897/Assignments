@@ -62,3 +62,14 @@ for(let index in fruits)
     console.log(index,"=",fruits[index]);
 }
 console.log("************************\n");
+
+//key in concept with diplay values also
+
+let empData ={
+    empName : "Vignesh",
+    empAge  : 29,
+    empRole : "Software Development in Test"
+};
+for(let empDetails in empData){
+console.log(empDetails,"=",empData[empDetails as keyof typeof empData]);
+}

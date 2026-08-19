@@ -9,4 +9,9 @@ empData.set(102, "Arun");
 empData.set("EMP103", "Kumar");
 empData.set("EMP104", "Ravi");
 
-console.log(empData);
+for (let [empId,empName] of empData)
+{
+    console.log(`empdetails is ${empId}= ${empName}`);
+}
+
+//console.log(empData);
