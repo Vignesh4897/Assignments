@@ -2,5 +2,5 @@
 
 export const PI :number = 3.14;
 export function sumOfNumbers(a: number,b:number):void {
-    console.log(a+b);
+    console.log(`Sum of the numbers is: ${a+b}`);
 }
