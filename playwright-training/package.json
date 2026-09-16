@@ -1,0 +1,25 @@
+{
+  "name": "playwright-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test" : "npx playwright test tests/1_annotations/annotations1.spec.ts",
+    "test_1" : "npx playwright test tests/1_annotations/annotations2.spec.ts",
+    "smoke"  : "npx playwright test tests/2_tags/tags.spec.ts --grep @smoke",
+    "regression"  : "npx playwright test tests/2_tags/tags.spec.ts --grep @regression",
+    "sanity"  : "npx playwright test tests/2_tags/tags.spec.ts --grep @regression",
+    "afterEach" : "npx playwright test tests/3_hooks/hooks_1.spec.ts",
+    "beforeAll" : "npx playwright test tests/3_hooks/hooks_3.spec.ts",
+    "afterAll" :  "npx playwright test tests/3_hooks/hooks_4.spec.ts",
+    "browser" :  "npx playwright test tests/4_browser_actions/browser_actions.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.0"
+  }
+}
