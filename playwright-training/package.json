@@ -12,7 +12,8 @@
     "afterEach" : "npx playwright test tests/3_hooks/hooks_1.spec.ts",
     "beforeAll" : "npx playwright test tests/3_hooks/hooks_3.spec.ts",
     "afterAll" :  "npx playwright test tests/3_hooks/hooks_4.spec.ts",
-    "browser" :  "npx playwright test tests/4_browser_actions/browser_actions.spec.ts"
+    "browser" :  "npx playwright test tests/4_browser_actions/browser_actions.spec.ts",
+    "xpath" : "npx playwright test /tests/5_locators/xpath.spec.ts"
   },
   "keywords": [],
   "author": "",
