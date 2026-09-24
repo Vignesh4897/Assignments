@@ -2,13 +2,16 @@
 
 //CSS selector syntaxes :
 
-//Syntax 1: tagName#id
+//Syntax 1: tagName#id  //--># → ID selector
 //Syntax 2: tagName.className
 //Syntax 3: tagName[attribute='value']
-//Syntax 4: tagName[attribute*='value'] //Attribute value contains so and so value.
+//Syntax 4: tagName[attribute*='value'] //--->*= Contains (any word)
+              //Attribute value contains so and so value.
 //          --->to search any meaningful word ex: googleplaywright we can use only shortcut word like'google'
-//Syntax 5: tagName[attribute^='value'] //Attribute value starts with so and so value.
-//Syntax 6: tagName[attribute$='value'] //Attribute value ends with so and so value.
+//Syntax 5: tagName[attribute^='value'] //--->^= — starts with (always first word)
+              //Attribute value starts with so and so value.
+//Syntax 6: tagName[attribute$='value'] //--->$= — ends with (always last word)
+              //Attribute value ends with so and so value.
 //Syntax 7: tagName[attribute1='value'][attribute2='value']
 
 import { test } from "@playwright/test";

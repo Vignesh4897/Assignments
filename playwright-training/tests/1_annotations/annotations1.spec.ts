@@ -38,7 +38,7 @@ test.describe('Group1',() =>{
 });
 
 test.describe('Group2',() =>{ 
-    test.slow();
+    test.fixme();
 
    test('Group2-Test case 1',async({page}) => {
      console.log("Group 2-This is test case 1");
