@@ -38,25 +38,25 @@ await page.locator('ul[class="leftmenu"] > li > a[href="services.htm"]');
 
 // Descendant selector uses a space ( ), not >
      
-// 1. Descendant selector  → A B
-      page.locator("div.login-form div.user-section input[name='username']");
+// // 1. Descendant selector  → A B
+//       page.locator("div.login-form div.user-section input[name='username']");
 
-// 2. Direct Child     → A > B
-      page.locator("div[class='payment']>input[name='cardNumber']");
+// // 2. Direct Child     → A > B
+//       page.locator("div[class='payment']>input[name='cardNumber']");
 
-// 3. Descendant + attribute
-      page.locator("div.checkout div.payment-section button");
-                // or
-      page.locator("div.checkout div.payment-section button[type='submit']");
+// // 3. Descendant + attribute
+//       page.locator("div.checkout div.payment-section button");
+//                 // or
+//       page.locator("div.checkout div.payment-section button[type='submit']");
 
-// 5. First Child      → A:first-child
-      page.locator("div.menu button:first-child");
+// // 5. First Child      → A:first-child
+//       page.locator("div.menu button:first-child");
 
-// 6. Last Child       → A:last-child
-      page.locator("div.menu button:last-child");
+// // 6. Last Child       → A:last-child
+//       page.locator("div.menu button:last-child");
 
-// 7. Nth Child        → A:nth-child(n)
-      page.locator("button:nth-child(3)");
+// // 7. Nth Child        → A:nth-child(n)
+//       page.locator("button:nth-child(3)");
 
-// 8. Multi-level direct child     → A > B > C
-      page.locator("div.products > div.product-card > div.product-info > button");
+// // 8. Multi-level direct child     → A > B > C
+//       page.locator("div.products > div.product-card > div.product-info > button");
