@@ -1,0 +1,295 @@
+{
+  "info": {
+    "_postman_id": "548a169c-ca1c-4b7b-b76c-049549abce1e",
+    "name": "git_api_collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58533438",
+    "_collection_link": "https://go.postman.co/collection/58533438-548a169c-ca1c-4b7b-b76c-049549abce1e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Duplicate repository request",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Storing the repository name before each request as global variable and accessing the same later\r\npm.globals.set(\"repoName\", \"playwrightRepo\");\r\n\r\n\r\n\r\n"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Verify the status code of the duplicate repository request\npm.test(\"Verify the status code\",function (){\n    pm.expect(pm.response.code).to.eql(422);\n});\n\n//Verify the status message\npm.test(\"Verify the status message\",function (){\n    pm.expect(pm.response.status).to.include(\"Unprocessable Entity\");\n});\n\n//verify the response time\npm.test(\"Verify the response time is less than 2000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\n//verify the response body\npm.test(\"Verify the response body\", function () {\n    const resp = pm.response.json();\n    pm.expect(resp.message).to.eql(\"Repository creation failed.\");\n    pm.expect(resp.errors[0].message).to.eql(\"name already exists on this account\");\n    pm.expect(resp.status).to.eql(\"422\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": " application/vnd.github+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\" : \"{{repoName}}\",\r\n    \"description\" : \"This is Sample Repository\",\r\n    \"private\" : true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/user/repos",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "valid repository request",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Storing the repository name before each request as global variable and accessing the same later\r\npm.globals.set(\"repoName\", \"Test_Repo_\" + Math.floor(Math.random() * 10000));\r\n\r\n\r\n"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Verify the status code of the duplicate repository request\r\npm.test(\"Verify the status code\",function (){\r\n    pm.expect(pm.response.code).to.eql(201);\r\n});\r\n\r\n//Verify the status message\r\npm.test(\"Verify the status message\",function (){\r\n    pm.expect(pm.response.status).to.include(\"Created\");\r\n});\r\n\r\n//verify the response time\r\npm.test(\"Verify the response time is less than 3000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(3000);\r\n});\r\n\r\n//verify the response body\r\npm.test(\"Verify the response body\", function () {\r\n    const resp = pm.response.json();\r\n    pm.expect(resp.name).to.eql(pm.globals.get(\"repoName\"));\r\n    pm.expect(resp.description).to.eql(\"This is Sample Repository\");\r\n   \r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": " application/vnd.github+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\" : \"{{repoName}}\",\r\n    \"description\" : \"This is Sample Repository\",\r\n    \"private\" : true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/user/repos",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get repository request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Verify the status code of the duplicate repository request\r\npm.test(\"Verify the status code\",function (){\r\n    pm.expect(pm.response.code).to.eql(200);\r\n});\r\n\r\n//Verify the status message\r\npm.test(\"Verify the status message\",function (){\r\n    pm.expect(pm.response.status).to.include(\"OK\");\r\n});\r\n\r\n//verify the response time\r\npm.test(\"Verify the response time is less than 3000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(3000);\r\n});\r\n\r\n//verify the response body\r\npm.test(\"Verify the response body\", function () {\r\n    const resp = pm.response.json();\r\n    pm.expect(resp.name).to.eql(pm.globals.get(\"repoName\"));\r\n    pm.expect(resp.description).to.eql(\"This is Sample Repository\");\r\n   \r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": " application/vnd.github+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/repos/{{owner}}/{{repoName}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "repos",
+            "{{owner}}",
+            "{{repoName}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete repository request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Verify the status code of the duplicate repository request\r\npm.test(\"Verify the status code\",function (){\r\n    pm.expect(pm.response.code).to.eql(200);\r\n});\r\n\r\n//Verify the status message\r\npm.test(\"Verify the status message\",function (){\r\n    pm.expect(pm.response.status).to.include(\"OK\");\r\n});\r\n\r\n//verify the response time\r\npm.test(\"Verify the response time is less than 3000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(3000);\r\n});\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": " application/vnd.github+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/repos/{{owner}}/{{repoName}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "repos",
+            "{{owner}}",
+            "{{repoName}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update repository request",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Storing the repository name before each request as global variable and accessing the same later\r\npm.globals.set(\"repoName\", \"Test_Repo_\" + Math.floor(Math.random() * 10000));\r\n\r\n\r\n"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Verify the status code\", function () {\n    pm.response.to.have.status(201);\n});\n\npm.test(\"Verify the status message\", function () {\n    pm.response.to.have.status(\"Created\");\n});\n\npm.test(\"Verify the response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\npm.test(\"Verify the response body\", function () {\n    pm.response.to.be.json;\n    pm.expect(pm.response.json()).to.have.property(\"id\");\n    pm.expect(pm.response.json()).to.have.property(\"name\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": " application/vnd.github+json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "X-GitHub-Api-Version",
+            "value": "2026-03-10"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\" : false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/user/repos",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
